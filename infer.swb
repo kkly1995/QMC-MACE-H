@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH --job-name="MACE"
+#SBATCH --output="infer.out"
+#SBATCH --error="infer.err"
+#SBATCH --partition=gpux1
+#SBATCH --time=1
+
+module load opence/1.7.2
+conda activate mace
+python ../../inference.py hydrogen.model /home/ly1/H/metallic/subtracted_data/qmc/testing.xyz infer

@@ -1,0 +1,10 @@
+#!/bin/bash
+#SBATCH --job-name="MACE"
+#SBATCH --output="output"
+#SBATCH --error="error"
+#SBATCH --partition=gpux1
+#SBATCH --time=24
+
+module load opence/1.7.2
+conda activate mace
+bash input.sh
